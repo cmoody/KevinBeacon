@@ -21,6 +21,8 @@
         </config-file>
         <header-file src="src/ios/MMWebBeacon.h" />
         <source-file src="src/ios/MMWebBeacon.m" />
+        <header-file src="src/ios/BeaconManager.h" />
+        <source-file src="src/ios/BeaconManager.m" />
 
         <framework src="CoreBluetooth.framework" />
         <framework src="CoreLocation.framework" />
