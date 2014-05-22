@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.mutualmobile.kevinbeacon" version="0.0.1">
+    <name>KevinBeacon</name>
+    <description>Cordova Beacon Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ibeacon,beacon</keywords>
+    <repo></repo>
+    
+    <!-- js -->
+    <js-module src="www/beacon.js" name="beacon">
+        <clobbers target="beacon" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Beacon">
+                <param name="ios-package" value="MMWebBeacon"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/MMWebBeacon.h" />
+        <source-file src="src/ios/MMWebBeacon.m" />
+
+        <framework src="CoreBluetooth.framework" />
+        <framework src="CoreLocation.framework" />
+    </platform>
+</plugin>
