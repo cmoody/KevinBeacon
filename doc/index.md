@@ -20,6 +20,7 @@ KBeacon.stopBeacon(successCallback, errorCallback, Identifier);
 
 
 ## Coming Soon
+
 - Find Available Beacons
 - 
 
