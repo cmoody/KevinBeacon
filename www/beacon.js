@@ -3,12 +3,13 @@ var Beacon;
 
 function BeaconPlugin() {};
 
-BeaconPlugin.prototype.startBeacon = function(uuid, identifier, major, minor) {
-  exec(function() {}, function() {}, 'WebBeacon', 'start', [uuid, identifier, major, minor]);
+// Add callback ability?
+BeaconPlugin.prototype.startBeacon = function(successCallback, errorCallback, uuid, identifier, major, minor) {
+  exec(successCallback, errorCallback, 'WebBeacon', 'start', [uuid, identifier, major, minor]);
 };
 
-BeaconPlugin.prototype.stopBeacon = function(identifier) {
-  exec(function() {}, function() {}, 'WebBeacon', 'stop', [identifier]);
+BeaconPlugin.prototype.stopBeacon = function(successCallback, errorCallback, identifier) {
+  exec(successCallback, errorCallback, 'WebBeacon', 'stop', [identifier]);
 };
 
 Beacon = new BeaconPlugin();

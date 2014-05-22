@@ -34,13 +34,28 @@ var app = {
     onStartBeacon: function() {
         $('#deviceready').addClass('blink');
         
-        beacon.startBeacon('F7826DA6-4FA2-4E98-8024-BC5B71E0893E', 'mmBeacon');
+        beacon.startBeacon(function() {
+                console.log("Success!");
+            },
+            function() {
+                console.log("Error!");
+            },
+            'F7826DA6-4FA2-4E98-8024-BC5B71E0893E', 
+            'mmBeacon');
+        
         //alert('Start: mmBeacon');
     },
     onStopBeacon: function() {
         $('#deviceready').removeClass('blink');
 
-        beacon.stopBeacon('mmBeacon');
+        beacon.stopBeacon(function() {
+                console.log("Success!");
+            },
+            function() {
+                console.log("Error!");
+            },
+            'mmBeacon');
+
         alert('Stop: mmBeacon');
     },
     onBeaconNotification: function(e) {
