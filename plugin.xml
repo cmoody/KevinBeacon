@@ -7,8 +7,8 @@
     <keywords>cordova,ibeacon,beacon</keywords>
     <repo></repo>
     
-    <!-- js -->
-    <js-module src="www/beacon.js" name="beacon">
+    <!-- This is the object exposed in JS -->
+    <js-module src="www/beacon.js" name="KBeacon">
         <clobbers target="beacon" />
     </js-module>
 

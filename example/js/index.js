@@ -34,7 +34,7 @@ var app = {
     onStartBeacon: function() {
         $('#deviceready').addClass('blink');
         
-        beacon.startBeacon(function() {
+        KBeacon.startBeacon(function() {
                 console.log("Success!");
             },
             function() {
@@ -42,13 +42,13 @@ var app = {
             },
             'F7826DA6-4FA2-4E98-8024-BC5B71E0893E', 
             'mmBeacon');
-        
+
         //alert('Start: mmBeacon');
     },
     onStopBeacon: function() {
         $('#deviceready').removeClass('blink');
 
-        beacon.stopBeacon(function() {
+        KBeacon.stopBeacon(function() {
                 console.log("Success!");
             },
             function() {

@@ -1,10 +1,10 @@
 # KevinBeacon
-This plugin exposes a beacon object that currently has to methods.
+This plugin exposes a KBeacon object that currently has two methods.
 
 ## Start a Beacon
 
 ```
-beacon.startBeacon(successCallback, errorCallback, UUID, Identifier, Major, Minor);
+KBeacon.startBeacon(successCallback, errorCallback, UUID, Identifier, Major, Minor);
 ```
 
 ### Description
@@ -13,7 +13,7 @@ beacon.startBeacon(successCallback, errorCallback, UUID, Identifier, Major, Mino
 ## Stop Beacon
 
 ```
-beacon.stopBeacon(successCallback, errorCallback, Identifier);
+KBeacon.stopBeacon(successCallback, errorCallback, Identifier);
 ```
 
 ### Description

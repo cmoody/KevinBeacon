@@ -1,5 +1,5 @@
 var exec = require('cordova/exec');
-var Beacon;
+var KBeacon;
 
 function BeaconPlugin() {};
 
@@ -12,6 +12,6 @@ BeaconPlugin.prototype.stopBeacon = function(successCallback, errorCallback, ide
   exec(successCallback, errorCallback, 'WebBeacon', 'stop', [identifier]);
 };
 
-Beacon = new BeaconPlugin();
+KBeacon = new BeaconPlugin();
 
-module.exports = Beacon;
+module.exports = KBeacon;
