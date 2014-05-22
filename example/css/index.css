@@ -77,6 +77,12 @@ h1 {
     padding:0px;
     text-align:center;
 }
+.btn {
+    padding: 10px;
+    margin: 5px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
 
 .event {
     border-radius:4px;

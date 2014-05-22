@@ -29,15 +29,24 @@
     <body>
         <div class="app">
             <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
+            <div id="deviceready">
                 <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <p class="event received">Beacon is Ready</p>
+            </div>
+            <div class="beacon">
+                <div class="btn" id="start">Start</div>
+                <div class="btn" id="stop">Stop</div>
+                <div id="response"></div>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/beacon.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
-            app.initialize();
+            $(document).ready(function(){
+                app.initialize();
+            });
         </script>
     </body>
 </html>

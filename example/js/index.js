@@ -26,15 +26,34 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        // document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.getElementById('start').addEventListener('click', this.onStartBeacon, false);
+        document.getElementById('stop').addEventListener('click', this.onStopBeacon, false);
+        $(window).on('beaconNotification', this.onBeaconNotification);
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onStartBeacon: function() {
+        $('#deviceready').addClass('blink');
+        
+        beacon.startBeacon('F7826DA6-4FA2-4E98-8024-BC5B71E0893E', 'mmBeacon');
+        //alert('Start: mmBeacon');
+    },
+    onStopBeacon: function() {
+        $('#deviceready').removeClass('blink');
+
+        beacon.stopBeacon('mmBeacon');
+        alert('Stop: mmBeacon');
+    },
+    onBeaconNotification: function(e) {
+        alert('Received Beacon Event: ' + e);
         app.receivedEvent('deviceready');
     },
+    // // deviceready Event Handler
+    // //
+    // // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // // function, we must explicity call 'app.receivedEvent(...);'
+    // onDeviceReady: function() {
+    //     app.receivedEvent('deviceready');
+    // },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
